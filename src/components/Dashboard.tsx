@@ -1,6 +1,9 @@
 import React from 'react';
 import { MapPin, Users, Shield, Battery, Wifi, WifiOff, AlertTriangle } from 'lucide-react';
 import TrackingMap from './TrackingMap';
+import AddChildDialog from './AddChildDialog';
+import EmergencyAlertDialog from './EmergencyAlertDialog';
+import ExportDataDialog from './ExportDataDialog';
 
 interface Child {
   id: number;
@@ -19,9 +22,10 @@ interface Child {
 
 interface DashboardProps {
   children: Child[];
+  onAddChild?: (child: Child) => void;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ children }) => {
+const Dashboard: React.FC<DashboardProps> = ({ children, onAddChild }) => {
   const safeChildren = children.filter(child => child.status === 'safe').length;
   const warningChildren = children.filter(child => child.status === 'warning').length;
   const onlineChildren = children.filter(child => child.isOnline).length;
@@ -167,15 +171,9 @@ const Dashboard: React.FC<DashboardProps> = ({ children }) => {
         </div>
         <div className="sana-card-content">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <button className="btn-primary">
-              Add New Child
-            </button>
-            <button className="btn-secondary">
-              Emergency Alert
-            </button>
-            <button className="btn-secondary">
-              Export Data
-            </button>
+            <AddChildDialog onAddChild={onAddChild || (() => {})} />
+            <EmergencyAlertDialog children={children} />
+            <ExportDataDialog children={children} />
           </div>
         </div>
       </div>

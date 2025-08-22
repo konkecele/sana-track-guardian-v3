@@ -107,7 +107,7 @@ export default function Index() {
   const { account, connectWallet } = useWallet();
 
   // Mock data for children
-  const [children] = useState([
+  const [children, setChildren] = useState([
     {
       id: 1,
       name: "Emma Johnson",
@@ -156,6 +156,10 @@ export default function Index() {
     }
   };
 
+  const handleAddChild = (newChild: any) => {
+    setChildren(prev => [...prev, newChild]);
+  };
+
   if (loading) {
     return <LoadingScreen />;
   }
@@ -167,7 +171,7 @@ export default function Index() {
   const renderPage = () => {
     switch (currentPage) {
       case 'dashboard':
-        return <Dashboard children={children} />;
+        return <Dashboard children={children} onAddChild={handleAddChild} />;
       
       case 'children':
         return (
