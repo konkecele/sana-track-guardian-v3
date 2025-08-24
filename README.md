@@ -172,11 +172,11 @@ forge create --rpc-url [BLOCKDAG_RPC] --private-key [KEY] src/ChildRegistry.sol:
 
 ### Network Configuration
 Add BlockDAG network to MetaMask:
-- **Network Name**: BlockDAG Mainnet
-- **RPC URL**: [Your BlockDAG RPC endpoint]
-- **Chain ID**: [BlockDAG Chain ID]
+- **Network Name**: Primordial BlockDAG Testnet
+- **RPC URL**: https://rpc.primordial.bdagscan.com/ 
+- **Chain ID**: 1043
 - **Currency Symbol**: BDAG
-- **Block Explorer**: [BlockDAG Explorer URL]
+- **Block Explorer**: (https://primordial.bdagscan.com/)
 
 ## 🎯 Judging Criteria Alignment
 
@@ -189,11 +189,9 @@ Add BlockDAG network to MetaMask:
 ## 🔗 External Access
 
 ### Production URLs
-- **Live Application**: Available after deployment via chosen platform
-- **GitHub Repository**: Public repo with complete source code
-- **Demo Video**: [Link to 3-minute demo video]
-- **Smart Contracts**: Deployed on BlockDAG testnet/mainnet
-
+- **Live Application**: [https://sana-track-guardian-v3.lovable.app/]
+- **GitHub Repository**: [https://github.com/CLXKON001/sana-track-guardian-v3.git]
+- **Smart Contracts**: 0x9Cd12087B42921e4f63Ea819E4c28Fd0Bc91bE94
 ### API Endpoints
 The app connects to:
 - BlockDAG RPC endpoints for blockchain data
