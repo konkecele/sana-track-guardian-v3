@@ -6,9 +6,10 @@ interface LayoutProps {
   currentPage: string;
   setCurrentPage: (page: string) => void;
   account: string | null;
+  onLogout: () => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage, account }) => {
+const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage, account, onLogout }) => {
   const navigationItems = [
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'children', label: 'Children', icon: Users },
@@ -69,7 +70,11 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage, 
                 {account ? `${account.slice(0, 6)}...${account.slice(-4)}` : 'Not connected'}
               </span>
             </div>
-            <button className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all">
+            <button 
+              onClick={onLogout}
+              className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all"
+              title="Disconnect Wallet"
+            >
               <LogOut className="w-4 h-4" />
             </button>
           </div>

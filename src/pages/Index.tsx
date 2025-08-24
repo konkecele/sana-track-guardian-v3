@@ -104,7 +104,7 @@ const ConnectWalletScreen = ({ onConnect }: { onConnect: () => void }) => (
 export default function Index() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState('dashboard');
-  const { account, connectWallet } = useWallet();
+  const { account, connectWallet, disconnectWallet } = useWallet();
 
   // Mock data for children - Fixed land coordinates
   const [children, setChildren] = useState([
@@ -268,7 +268,12 @@ export default function Index() {
   };
 
   return (
-    <Layout currentPage={currentPage} setCurrentPage={setCurrentPage} account={account}>
+    <Layout 
+      currentPage={currentPage} 
+      setCurrentPage={setCurrentPage} 
+      account={account}
+      onLogout={disconnectWallet}
+    >
       {renderPage()}
     </Layout>
   );
