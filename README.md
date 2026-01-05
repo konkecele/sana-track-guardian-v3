@@ -4,9 +4,6 @@
 
 SanaGuard is a decentralized child safety tracking platform built for the BlockDAG Hackathon. It combines blockchain technology with real-time location tracking to provide parents with secure, transparent, and immutable child safety monitoring.
 
-## 🏆 Hackathon Compliance
-
-### Tech Stack Requirements ✅
 
 **Frontend:**
 - ✅ Built with React.js (v18.3.1) using Vite
